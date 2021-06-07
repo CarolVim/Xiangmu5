@@ -1,0 +1,18 @@
+import os
+user_id='userid'
+
+FRONT_CUSTOMER_NAME='TEST'
+FRONT_CUSTOMER_ID='12'
+ADMIN_CUSTOMER_ID='13'
+
+SECRET_KEY = os.urandom(24)
+DEBUG=True
+DB_USERNAME = 'root'
+DB_PASSWORD = 'toor16'#记得先将密码修改成本地数据库的密码
+DB_HOST = '127.0.0.1'
+DB_PORT = '3306'
+DB_NAME = 'xm2'
+DB_URI = 'mysql+pymysql://%s:%s@%s:%s/%s?charset=utf8' % (DB_USERNAME,DB_PASSWORD,DB_HOST,DB_PORT,DB_NAME)
+SQLALCHEMY_DATABASE_URI = DB_URI
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+SQLALCHEMY_ECHO= False

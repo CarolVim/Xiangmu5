@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>进度查看</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link href="../../static/front/jindu/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../../static/front/jindu/css/message.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="../../static/front/jindu/themes/css/core.css">
+    <link rel="stylesheet" type="text/css" href="../../static/front/jindu/themes/css/home.css">
+    <link href="../../static/front/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../../static/front/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    {#    <link rel="stylesheet" href="../../static/front/css/style.css">#}
+    {#    <link rel="stylesheet" href="../../static/front/css/menu.min.css">#}
+</head>
+<body style="background: #fff;">
+<div class="tit">
+    <div class="tita">
+        {{ session.get(config.FRONT_CUSTOMER_NAME) }}
+    </div>
+</div>
+<section class="aui-myOrder-content">
+    <div class="m-tab demo-small-pitch" data-ydui-tab>
+
+        <div class="tab-panel">
+            <div class="tab-panel-item tab-active">
+
+                <section class="aui-flexView">
+
+                    <section class="aui-scrollView" style="background:#fff ;border-bottom: 2px #efefef solid;">
+                        <div class="aui-coll-step  yd-step-theme1 clearfix">
+                            <ul class="yd-step-content">
+                                <li class="yd-step-item yd-step-item-current">
+                                    <em class="yd-step-checkmark">
+                                        <i></i>
+                                    </em>
+                                    <div class="yd-step-item-top">
+                                        <div class="yd-step-item-top-text">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <div class="yd-step-item-bottom">
+                                        <p>申请</p>
+                                    </div>
+                                </li>
+                                {% if p>=1 %}
+                                    <li class="yd-step-item yd-step-item-current">
+                                        <em class="yd-step-checkmark">
+                                            <i></i>
+                                        </em>
+                                        <div class="yd-step-item-top">
+                                            <div class="yd-step-item-top-text">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <div class="yd-step-item-bottom">
+                                            <p>审核</p>
+
+                                        </div>
+                                    </li>
+                                {% else %}
+                                    <li class="yd-step-item">
+                                        <em class="yd-step-checkmark">
+                                            <i></i>
+                                        </em>
+                                        <div class="yd-step-item-top">
+                                            <div class="yd-step-item-top-text">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <div class="yd-step-item-bottom">
+                                            <p>审核</p>
+
+                                        </div>
+                                    </li>
+                                {% endif %}
+                                {% if p>=2 %}
+                                    <li class="yd-step-item yd-step-item-current">
+                                        <em class="yd-step-checkmark">
+                                            <i></i>
+                                        </em>
+                                        <div class="yd-step-item-top">
+                                            <div class="yd-step-item-top-text">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <div class="yd-step-item-bottom">
+                                            <p>开展</p>
+
+                                        </div>
+                                    </li>
+                                {% else %}
+                                    <li class="yd-step-item">
+                                        <em class="yd-step-checkmark">
+                                            <i></i>
+                                        </em>
+                                        <div class="yd-step-item-top">
+                                            <div class="yd-step-item-top-text">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <div class="yd-step-item-bottom">
+                                            <p>开展</p>
+
+                                        </div>
+                                    </li>
+                                {% endif %}
+                                {% if p>=3 %}
+                                    <li class="yd-step-item yd-step-item-current">
+                                        <em class="yd-step-checkmark">
+                                            <i></i>
+                                        </em>
+                                        <div class="yd-step-item-top">
+                                            <div class="yd-step-item-top-text">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <div class="yd-step-item-bottom">
+                                            <p>完成</p>
+
+                                        </div>
+                                    </li>
+                                {% else %}
+                                    <li class="yd-step-item">
+                                        <em class="yd-step-checkmark">
+                                            <i></i>
+                                        </em>
+                                        <div class="yd-step-item-top">
+                                            <div class="yd-step-item-top-text">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <div class="yd-step-item-bottom">
+                                            <p>完成</p>
+
+                                        </div>
+                                    </li>
+                                {% endif %}
+                                {% if p>=4 %}
+                                    <li class="yd-step-item yd-step-item-current">
+                                        <em class="yd-step-checkmark">
+                                            <i></i>
+                                        </em>
+                                        <div class="yd-step-item-top">
+                                            <div class="yd-step-item-top-text">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <div class="yd-step-item-bottom">
+                                            <p>归档</p>
+
+                                        </div>
+                                    </li>
+                                {% else %}
+                                    <li class="yd-step-item">
+                                        <em class="yd-step-checkmark">
+                                            <i></i>
+                                        </em>
+                                        <div class="yd-step-item-top">
+                                            <div class="yd-step-item-top-text">
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                        <div class="yd-step-item-bottom">
+                                            <p>归档</p>
+
+                                        </div>
+                                    </li>
+                                {% endif %}
+
+                            </ul>
+                        </div>
+                    </section>
+                    <div class="container">
+                        <div class="cardexplain">
+                            <div class="history">
+                                <div class="history-date">
+                                    <ul>
+                                        <a><h2 class="first first1"></h2></a>
+                                        {% for data in recordList %}
+                                            <li class="green bounceInDown">
+                                                <h3 style="color:#38aae1;margin-left: 10px;display: flex;">
+                                                    <span style="color:#38aae1;">{{ data.addDate }}</span>
+                                                    <span style="color:#38aae1;margin: 0px 0 0 10px;"></span>
+                                                    <div class="clr"></div>
+                                                </h3>
+                                                <dl style="margin-left: 10px;">
+                                                    <dt class="hfinfo" date="17369">{{ data.content }}</dt>
+                                                </dl>
+                                            </li>
+                                        {% endfor %}
+                                        {#                                        <li class="green bounceInDown">#}
+                                        {#                                            <h3 style="color:#38aae1;margin-left: 10px;display: flex;">#}
+                                        {#                                                <span style="color:#38aae1;">2019-01-04 13:54:35</span>#}
+                                        {#                                                <span style="color:#38aae1;margin: 0px 0 0 10px;">其他</span>#}
+                                        {#                                                <div class="clr"></div>#}
+                                        {#                                            </h3>#}
+                                        {#                                            <dl style="margin-left: 10px;">#}
+                                        {#                                                <dt class="hfinfo" date="17369">好</dt>#}
+                                        {#                                                <dt style="font-size: 12px;">#}
+                                        {#                                                    非常好#}
+                                        {#                                                </dt>#}
+                                        {#                                                <dt style="font-size: 12px;">#}
+                                        {#                                                    特别好好#}
+                                        {#                                                </dt>#}
+                                        {#                                            </dl>#}
+                                        {#                                        </li>#}
+                                        {#                                        <li class="green bounceInDown">#}
+                                        {#                                            <h3 style="color:#38aae1;margin-left: 10px;display: flex;">#}
+                                        {#                                                <span style="color:#38aae1;">2019-01-04 13:54:35</span>#}
+                                        {#                                                <span style="color:#38aae1;margin: 0px 0 0 10px;">其他</span>#}
+                                        {#                                                <div class="clr"></div>#}
+                                        {#                                            </h3>#}
+                                        {#                                            <dl style="margin-left: 10px;">#}
+                                        {#                                                <dt class="hfinfo" date="17369">好</dt>#}
+                                        {#                                                <dt style="font-size: 12px;">#}
+                                        {#                                                    非常好#}
+                                        {#                                                </dt>#}
+                                        {#                                                <dt style="font-size: 12px;">#}
+                                        {#                                                    特别好好#}
+                                        {#                                                </dt>#}
+                                        {#                                            </dl>#}
+                                        {#                                        </li>#}
+                                        {#                                        <li class="green bounceInDown">#}
+                                        {#                                            <h3 style="color:#38aae1;margin-left: 10px;display: flex;">#}
+                                        {#                                                <span style="color:#38aae1;">2019-01-04 13:54:35</span>#}
+                                        {#                                                <span style="color:#38aae1;margin: 0px 0 0 10px;">其他</span>#}
+                                        {#                                                <div class="clr"></div>#}
+                                        {#                                            </h3>#}
+                                        {#                                            <dl style="margin-left: 10px;">#}
+                                        {#                                                <dt class="hfinfo" date="17369">好</dt>#}
+                                        {#                                                <dt style="font-size: 12px;">#}
+                                        {#                                                    非常好#}
+                                        {#                                                </dt>#}
+                                        {#                                                <dt style="font-size: 12px;">#}
+                                        {#                                                    特别好好#}
+                                        {#                                                </dt>#}
+                                        {#                                            </dl>#}
+                                        {#                                        </li>#}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+            <div class="tab-panel-item">
+                <section class="aui-flexView">
+
+                    <section class="aui-scrollView" style="background:#fff ;border-bottom: 2px #efefef solid;">
+                        <div class="aui-coll-step  yd-step-theme1 clearfix">
+                            <ul class="yd-step-content">
+                                <li class="yd-step-item yd-step-item-current">
+                                    <em class="yd-step-checkmark">
+                                        <i></i>
+                                    </em>
+                                    <div class="yd-step-item-top">
+                                        <div class="yd-step-item-top-text">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <div class="yd-step-item-bottom">
+                                        <p>问询</p>
+
+                                    </div>
+                                </li>
+                                <li class="yd-step-item">
+                                    <em class="yd-step-checkmark">
+                                        <i></i>
+                                    </em>
+                                    <div class="yd-step-item-top">
+                                        <div class="yd-step-item-top-text">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <div class="yd-step-item-bottom">
+                                        <p>看房</p>
+
+                                    </div>
+                                </li>
+                                <li class="yd-step-item yd-step-item-current">
+                                    <em class="yd-step-checkmark">
+                                        <i></i>
+                                    </em>
+                                    <div class="yd-step-item-top">
+                                        <div class="yd-step-item-top-text">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <div class="yd-step-item-bottom">
+                                        <p>预约</p>
+
+                                    </div>
+                                </li>
+                                <li class="yd-step-item">
+                                    <em class="yd-step-checkmark">
+                                        <i></i>
+                                    </em>
+                                    <div class="yd-step-item-top">
+                                        <div class="yd-step-item-top-text">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <div class="yd-step-item-bottom">
+                                        <p>认购</p>
+
+                                    </div>
+                                </li>
+                                <li class="yd-step-item yd-step-item-current">
+                                    <em class="yd-step-checkmark">
+                                        <i></i>
+                                    </em>
+                                    <div class="yd-step-item-top">
+                                        <div class="yd-step-item-top-text">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <div class="yd-step-item-bottom">
+                                        <p>签约</p>
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <div>
+                        <div>
+                            {#			<div class="history">#}
+                            {#			<div id="comment_form">#}
+                            {#                            {% include('front/huibao.html')%}#}
+                            {#			</div>#}
+                            {#			</div>#}
+                        </div>
+                    </div>
+                </section>
+
+                <script type="text/javascript" src="../../static/front/jindu/themes/js/jquery.min.js"></script>
+                <script type="text/javascript" src="../../static/front/jindu/themes/js/aui.js"></script>
+                <script type="text/javascript">
+                    $(function () {
+                        //绑定滚动条事件
+                        //绑定滚动条事件
+                        $(window).bind("scroll", function () {
+                            var sTop = $(window).scrollTop();
+                            var sTop = parseInt(sTop);
+                            if (sTop >= 40) {
+                                if (!$("#scrollBg").is(":visible")) {
+                                    try {
+                                        $("#scrollBg").slideDown();
+                                    } catch (e) {
+                                        $("#scrollBg").show();
+                                    }
+                                }
+                            } else {
+                                if ($("#scrollBg").is(":visible")) {
+                                    try {
+                                        $("#scrollBg").slideUp();
+                                    } catch (e) {
+                                        $("#scrollBg").hide();
+                                    }
+                                }
+                            }
+                        });
+                    })
+                </script>
+</body>
+</html>

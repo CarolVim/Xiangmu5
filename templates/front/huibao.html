@@ -1,0 +1,97 @@
+{% include('front/header.html') %}
+	<div id="page-content" class="sub-page">
+		<article class="box-content container" >
+			<div class="svg-container single-post-svg svg-block">
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1890 150">
+					<g transform="translate(0,-902.36218)"></g>
+					  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"></path>
+					  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"></path>
+					  <path d="m 1925,0 0,150 -1925,0"></path>
+				</svg>
+			</div>
+			<div class="post">
+				<h1 class="entry-title">今日汇报</h1>
+				<div id="contact_form">
+					<form name="form1" id="ff" method="post" action="/front/AddRecord.html">
+						<div class="row">
+						</div>
+						<label>
+						<textarea name="message" id="message" placeholder="Your message" ></textarea>
+						</label>
+						<center><input class="sendButton" type="submit" name="Submit" value="Submit"></center>
+                         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+					</form>
+				</div>
+			</div>
+			<div class="svg-container single-post-svg single-svg-bottom svg-block">
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 150">
+				  <g transform="translate(0,-902.36218)"></g>
+				  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"></path>
+				  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"></path>
+				  <path d="M 0,150 0,0 1925,0"></path>
+				</svg>
+			</div>
+
+
+		</article>
+	</div>
+
+	<div class="svg-container footer-svg svg-block">
+
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1890 150">
+			<g transform="translate(0,-902.36218)"></g>
+			  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"></path>
+			  <path d="m 898.41609,-33.21176 0.01,0 -0.005,-0.009 -0.005,0.009 z"></path>
+			  <path d="m 1925,0 0,150 -1925,0"></path>
+		</svg>
+		</div>
+	<!-- /////////////////////////////////////////Footer -->
+	<footer>
+		<div class="wrap-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+					</div>
+					<div class="col-md-4">
+						<ul class="list-inline social-buttons">
+
+						</ul>
+					</div>
+					<div class="col-md-4">
+						<ul class="list-inline quicklinks">
+							<li><a href="#">Privacy Policy</a>
+							</li>
+							<li><a href="#">Terms of Use</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer -->
+
+	<!-- Top Slider -->
+    <script src="../../static/front/js/jquery.js"></script>
+
+	<!-- Menu Js -->
+	<script src="../../static/front/js/materialMenu.js"></script>
+	<script>
+	  var menu = new Menu;
+	</script>
+
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../../static/front/js/bootstrap.min.js"></script>
+
+	<!-- Google Map -->
+	<script>
+		$('.maps').click(function () {
+		$('.maps iframe').css("pointer-events", "auto");
+	});
+
+	$( ".maps" ).mouseleave(function() {
+	  $('.maps iframe').css("pointer-events", "none");
+	});
+	</script>
+</body>
+</html>
